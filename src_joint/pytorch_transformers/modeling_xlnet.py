@@ -274,6 +274,7 @@ class XLNetConfig(PretrainedConfig):
                 json_config = json.loads(reader.read())
             for key, value in json_config.items():
                 self.__dict__[key] = value
+            self.n_token = json_config["vocab_size"]
         elif isinstance(vocab_size_or_config_json_file, int):
             self.n_token = vocab_size_or_config_json_file
             self.d_model = d_model

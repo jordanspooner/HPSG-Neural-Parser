@@ -197,6 +197,7 @@ class PretrainedConfig(object):
         config = cls(vocab_size_or_config_json_file=-1)
         for key, value in json_object.items():
             config.__dict__[key] = value
+        config.n_token = json_object["vocab_size"]
         return config
 
     @classmethod
